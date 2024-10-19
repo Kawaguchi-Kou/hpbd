@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Birthday Card</title>
+    <!-- Google Font-->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="card" id="birthdayCard">
+      <div class="outside">
+        <div class="front">
+          <p>Happy Birthday</p>
+          <div class="cake">
+            <div class="top-layer"></div>
+            <div class="middle-layer"></div>
+            <div class="bottom-layer"></div>
+            <div class="candle"></div>
+          </div>
+        </div>
+        <div class="back">
+          <!-- Add the images here -->
+          <img src="img/pic.jpg" alt="Birthday Image 1" class="image-1">
+          <img src="img/pic2.jpg" alt="Birthday Image 2" class="image-2">
+          <img src="img/pic3.jpg" alt="Birthday Image 3" class="image-3">
+        </div>
+      </div>
+      <div class="inside">
+        <p>Tuổi mới bớt sồn lại nhá!!!!</p>
+        <h1>&#127873;</h1>
+      </div>
+    </div>
+    
+    <!-- Audio Element -->
+    <audio id="birthdayAudio1" preload="auto">
+      <source src="audio/birthday%20whistle%20sound%20effect!.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="birthdayAudio2" preload="auto">
+      <source src="audio/Happy%20Birthday%20Swing.mp3" type="audio/mpeg">
+    </audio>
+
+    <script>
+      // Get the audio elements
+      const audio1 = document.getElementById('birthdayAudio1');
+      const audio2 = document.getElementById('birthdayAudio2');
+
+      // Play the first audio when the page is fully loaded
+      window.onload = function() {
+        audio1.play().catch(function(error) {
+          console.log('Autoplay was prevented:', error);
+        });
+      };
+
+      // Play the second audio when the first one ends
+      audio1.addEventListener('ended', function() {
+        audio2.play().catch(function(error) {
+          console.log('Autoplay was prevented:', error);
+        });
+      });
+    </script>
+  </body>
+</html>
